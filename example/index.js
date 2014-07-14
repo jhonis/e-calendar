@@ -1,3 +1,3 @@
 $(document).ready(function () {
-    $('#calendar').eCalendar('test');
+    $('#calendar').eCalendar();
 });
