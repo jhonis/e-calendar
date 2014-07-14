@@ -4,7 +4,7 @@ e-calendar
 <img src="https://raw.githubusercontent.com/jhonis/e-calendar/master/example/example.png" alt="example_image"/>
 
 ####How to use
-  The basic thing you need to generate a calendar is a div element selectable by jQuery. Ex: ```<div id="calendar"></div>```
+  One of the simplest ways to generate a calendar is to create a div that has an element that can be chosen with jQuery. Ex: ```<div id="calendar"></div>```
 
 ####Options (default)
 ```JavaScript
