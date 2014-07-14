@@ -1,0 +1,28 @@
+{
+    "name": "e-calendar",
+    "title": "jQuery e-Calendar",
+    "description": "jQuery plugin for create a calendar with events.",
+    "keywords": [
+        "calendar",
+        "events"
+    ],
+    "version": "0.9.0",
+    "author": {
+        "name": "Jhonis de Souza",
+        "email": "jhonis.souza@gmail.com",
+        "url": "https://github.com/jquery/jquery-color/blob/2.1.2/AUTHORS.txt"
+    },
+    "licenses": [
+        {
+            "type": "GNU GENERAL PUBLIC LICENSE",
+            "url": "https://github.com/jhonis/e-calendar/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/jhonis/e-calendar/issues",
+    "homepage": "https://github.com/jhonis/e-calendar",
+    "docs": "https://github.com/jhonis/e-calendar",
+    "download": "https://github.com/jhonis/e-calendar",
+    "dependencies": {
+        "jquery": ">=1.9"
+    }
+}
