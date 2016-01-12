@@ -1,3 +1,9 @@
+/**
+ * @license e-Calendar v0.9.2
+ * (c) 2014-2016 - Jhonis de Souza
+ * License: GNU
+ */
+
 (function ($) {
 
     var eCalendar = function (options, object) {
@@ -122,7 +128,7 @@
                     }
                     for (var j = 0; j < settings.events.length; j++) {
                         var d = settings.events[j].datetime;
-                        if (d.getDate() == day && (d.getMonth() - 1) == dMonth && d.getFullYear() == dYear) {
+                        if (d.getDate() == day && d.getMonth() == dMonth && d.getFullYear() == dYear) {
                             cDay.addClass('c-event').attr('data-event-day', d.getDate());
                             cDay.on('mouseover', mouseOverEvent).on('mouseleave', mouseLeaveEvent);
                         }
@@ -137,8 +143,8 @@
             var eventList = $('<div/>').addClass('c-event-list');
             for (var i = 0; i < settings.events.length; i++) {
                 var d = settings.events[i].datetime;
-                if ((d.getMonth() - 1) == dMonth && d.getFullYear() == dYear) {
-                    var date = lpad(d.getDate(), 2) + '/' + lpad(d.getMonth(), 2) + ' ' + lpad(d.getHours(), 2) + ':' + lpad(d.getMinutes(), 2);
+                if (d.getMonth() == dMonth && d.getFullYear() == dYear) {
+                    var date = lpad(d.getDate(), 2) + '/' + lpad(d.getMonth() + 1, 2) + ' ' + lpad(d.getHours(), 2) + ':' + lpad(d.getMinutes(), 2);
                     var item = $('<div/>').addClass('c-event-item');
                     var title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title + '<br/>');
                     var description = $('<div/>').addClass('description').html(settings.events[i].description + '<br/>');
@@ -170,9 +176,9 @@
         eventTitle: 'Eventos',
         url: '',
         events: [
-            {title: 'Brasil x Croácia', description: 'Abertura da copa do mundo 2014', datetime: new Date(2014, 6, 12, 17)},
-            {title: 'Brasil x México', description: 'Segundo jogo da seleção brasileira', datetime: new Date(2014, 6, 17, 16)},
-            {title: 'Brasil x Camarões', description: 'Terceiro jogo da seleção brasileira', datetime: new Date(2014, 6, 23, 16)}
+            {title: 'Evento de Abertura', description: 'Abertura das Olimpíadas Rio 2016', datetime: new Date(2016, new Date().getMonth(), 12, 17)},
+            {title: 'Tênis de Mesa', description: 'BRA x ARG - Semifinal', datetime: new Date(2016, new Date().getMonth(), 23, 16)},
+            {title: 'Ginástica Olímpica', description: 'Classificatórias de equipes', datetime: new Date(2016, new Date().getMonth(), 31, 16)}
         ]
     };
 
