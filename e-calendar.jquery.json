@@ -6,7 +6,7 @@
         "calendar",
         "events"
     ],
-    "version": "0.9.0",
+    "version": "0.9.3",
     "author": {
         "name": "Jhonis de Souza",
         "email": "jhonis.souza@gmail.com",
@@ -23,6 +23,6 @@
     "docs": "https://github.com/jhonis/e-calendar",
     "download": "https://github.com/jhonis/e-calendar",
     "dependencies": {
-        "jquery": ">=1.9"
+        "jquery": ">=1.11.0"
     }
 }

@@ -1,5 +1,5 @@
 /**
- * @license e-Calendar v0.9.2
+ * @license e-Calendar v0.9.3
  * (c) 2014-2016 - Jhonis de Souza
  * License: GNU
  */
