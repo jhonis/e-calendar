@@ -17,7 +17,8 @@ url: '',
 events: [
     {title: 'Event Title 1', description: 'Description 1', datetime: new Date(2016, 0, 12, 17)},
     {title: 'Event Title 2', description: 'Description 2', datetime: new Date(2016, 0, 23, 16)}
-]
+],
+firstDayOfWeek: 0
 ```
 ####Event Object Properties
 ```JavaScript
@@ -38,7 +39,8 @@ $('#calendar').eCalendar({
 });
 
 $('#calendar').eCalendar({url: 'loadCalendar',
-                          weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']});
+                          weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                          firstDayOfWeek: 1}); // calendar starting on monday | (0 - 6: week days format)
 ```
 
 PS: remember that in date object instantiation, like the code below, the month starts from 0 to 11 and generate a date: 31/01/2016

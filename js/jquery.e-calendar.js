@@ -87,7 +87,10 @@
 
         function print() {
             loadEvents();
-            var dWeekDayOfMonthStart = new Date(dYear, dMonth, 1).getDay();
+            var dWeekDayOfMonthStart = new Date(dYear, dMonth, 1).getDay() - settings.firstDayOfWeek;
+            if (dWeekDayOfMonthStart < 0) {
+                dWeekDayOfMonthStart = 6 - ((dWeekDayOfMonthStart + 1) * -1);
+            }
             var dLastDayOfMonth = new Date(dYear, dMonth + 1, 0).getDate();
             var dLastDayOfPreviousMonth = new Date(dYear, dMonth + 1, 0).getDate() - dWeekDayOfMonthStart + 1;
 
@@ -109,10 +112,15 @@
             cBody.append(cPrevious);
             cBody.append(cMonth);
             cBody.append(cNext);
-            for (var i = 0; i < settings.weekDays.length; i++) {
+            var dayOfWeek = settings.firstDayOfWeek;
+            for (var i = 0; i < 7; i++) {
+                if (dayOfWeek > 6) {
+                    dayOfWeek = 0;
+                }
                 var cWeekDay = $('<div/>').addClass('c-week-day c-pad-top');
-                cWeekDay.html(settings.weekDays[i]);
+                cWeekDay.html(settings.weekDays[dayOfWeek]);
                 cBody.append(cWeekDay);
+                dayOfWeek++;
             }
             var day = 1;
             var dayOfNextMonth = 1;
@@ -179,7 +187,8 @@
             {title: 'Evento de Abertura', description: 'Abertura das Olimpíadas Rio 2016', datetime: new Date(2016, new Date().getMonth(), 12, 17)},
             {title: 'Tênis de Mesa', description: 'BRA x ARG - Semifinal', datetime: new Date(2016, new Date().getMonth(), 23, 16)},
             {title: 'Ginástica Olímpica', description: 'Classificatórias de equipes', datetime: new Date(2016, new Date().getMonth(), 31, 16)}
-        ]
+        ],
+        firstDayOfWeek: 0
     };
 
 }(jQuery));
