@@ -159,6 +159,20 @@
                     item.attr('data-event-day', d.getDate());
                     item.on('mouseover', mouseOverItem).on('mouseleave', mouseLeaveItem);
                     item.append(title).append(description);
+
+                    // Add the url to the description if is set
+                    if( settings.events[i].url !== undefined )
+                    {
+                        /**
+                         * If the setting url_blank is set and is true, the target of the url
+                         * will be "_blank"
+                         */
+                        type_url = settings.events[i].url_blank !== undefined && 
+                                   settings.events[i].url_blank === true ? 
+                                   '_blank':'';
+                        description.wrap( '<a href="'+ settings.events[i].url +'" target="'+type_url+'" ></a>' );
+                    }
+
                     eventList.append(item);
                 }
             }
